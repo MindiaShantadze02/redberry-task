@@ -12,8 +12,10 @@ import Form from "./components/Form";
 import { AppState } from "./context/AppState";
 
 function App() {
+
   // For changing from state to form component
   const [displayForm, setDisplayForm] = useState(false);
+  
   return (
     <AppState>
       <main className="app">

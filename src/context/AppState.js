@@ -12,6 +12,17 @@ export const AppContext = createContext();
 // InitialState
 export const initialState = {
     currentPage: 0,
+    personalInfo: {
+        firstname: "",
+        lastname: "",
+        email: "",
+        hasCovid: null,
+        isVaccinated: null,
+        onlineMeetings: "",
+        workFromOffice: "",
+        physicalMeetings: "",
+        opinionAboutEnvorinment: ""
+    }
 }
 
 // Context provider

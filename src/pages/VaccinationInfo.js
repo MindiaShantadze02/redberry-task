@@ -3,21 +3,25 @@ import doctor from "../imgs/doctor2.png";
 
 const VaccinationInfo = () => {
     return ( 
-        <div className="info">
-            <div className="info-form">
-                <form id="vaccination-form" style={{marginTop: "42px"}}>
-                    <label className="info-title">უკვე აცრილი ხარ?</label>
-                    <div className="info-input-group">
-                        <input type="radio" name="vaccination-info" id="vaccinated" className="info-label" />
-                        <label htmlFor="vaccinated">კი</label>
-                    </div>
-                    <div className="info-input-group">
-                        <input type="radio" name="vaccination-info" id="non-vaccinated" className="info-label" />
-                        <label htmlFor="non-vaccinated">არა</label>
+        <div className="content-wrapper">
+            <section className="form-wrapper">
+                <form id="vaccination-form">
+                    <div className="input-group">
+                        <h3 className="required">უკვე აცრილი ხარ?</h3>
+                        <div className="input-group-item">
+                            <input type="radio" name="vaccination-info" id="is-vaccinated" />
+                            <label htmlFor="is-vaccinated">კი</label>
+                        </div>
+                        <div className="input-group-item">
+                            <input type="radio" name="vaccination-info" id="is-not-vaccinated" />
+                            <label htmlFor="is-not-vaccinated">არა</label>
+                        </div>
                     </div>
                 </form>
-            </div>
-            <img src={doctor} alt="doctor" />
+            </section>
+            <aside class="img-wrapper">
+                <img src={doctor} alt="doctor" />
+            </aside>
         </div>
      );
 }

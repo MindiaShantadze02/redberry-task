@@ -10,7 +10,7 @@ const Start = ({setDisplayForm}) => {
     return ( 
         <div className="start-page">
             <img src={vector} alt="vector" />
-            <a href="#" onClick={switchToForm}>კითხვარის დაწყება</a>
+            <a href="#" onClick={switchToForm}>კითხვარის <br /> დაწყება</a>
         </div>
      );
 }
