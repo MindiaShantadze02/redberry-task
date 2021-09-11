@@ -1,38 +1,97 @@
-.App {
-  text-align: center;
+:root {
+  --gray: #EAEAEA;
+  --black: #232323;
+  --red: #FE3B1F;
+  --borderGray: #C4C4C4;
+  --bigFont: 40px;
+  --smallFont: 18px;
+  --boldFont: 700;
+  --containerWidth: calc(100% - 200px);
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  background-color: #EAEAEA;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.start-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.start-page img {
+  width: 100px;
+  height: 100px;
+  margin-top: 200px;
+  margin-bottom: 97px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.start-page a {
+  height: 179px;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: center;
+  color: var(--black);
+  text-decoration: none;
+}
+.form-page {
+  margin-top: 89px;
+}
+.navbar {
+  margin: auto;
+  width: var(--containerWidth);
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1.8px solid var(--black);
+  padding: 15px 0;
+}
+.navbar-logo {
+  color: var(--red);
+  font-weight: var(--boldFont);
+}
+.user-info {
+  margin: auto;
+  width: var(--containerWidth);
+  display: flex;
+}
+.user-info-form {
+  margin-bottom: 140px;
+}
+.user-info-input-group {
+  display: flex;
+  flex-direction: column;
+  margin-top: 47px;
+}
+.user-info-input-group > label {
+  font-weight: var(--boldFont);
+  margin-bottom: 5px;
+}
+.user-info-input-group > label:after {
+  content: "*";
+}
+.user-info-input-group > input {
+  height: 40px;
+  width: 340px;
+  background-color: transparent;
+  border: 0.8px solid var(--borderGray);
+  padding: 9px 0;
+  padding-left: 20px;
+  font-size: var(--smallFont);
+  color: var(--black);
+}
+.required-fields-info {
+  padding: 20px 0;
+  margin-top: 50px;
+  color: var(--borderGray);
+  width: 365px;
+  border-top: 0.8px solid var(--black);
+}
+.user-info img {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
 }

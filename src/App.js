@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+// Importing CSS
+import './app.css';
+// Importing Hooks
+import { useState } from "react";
+// Importing components
+import Start from "./components/Start";
+import Form from "./components/Form";
 function App() {
+
+  // For changing from state to form component
+  const [displayForm, setDisplayForm] = useState(false);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {displayForm ? <Form /> : <Start setDisplayForm={setDisplayForm} />}
     </div>
   );
 }
