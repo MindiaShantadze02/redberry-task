@@ -13,6 +13,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 27px;
 }
 body {
   background-color: #EAEAEA;
@@ -53,45 +54,72 @@ body {
   color: var(--red);
   font-weight: var(--boldFont);
 }
-.user-info {
-  margin: auto;
-  width: var(--containerWidth);
-  display: flex;
+@import url("./styles/user-info.css");
+.info-form {
+  width: 600px;
 }
-.user-info-form {
-  margin-bottom: 140px;
-}
-.user-info-input-group {
-  display: flex;
-  flex-direction: column;
-  margin-top: 47px;
-}
-.user-info-input-group > label {
+.info-title {
   font-weight: var(--boldFont);
-  margin-bottom: 5px;
 }
-.user-info-input-group > label:after {
+.info-label {
+  margin-left: 20px;
+  margin-right: 10px;
+  font-weight: 400;
+}
+.info-input-group {
+  margin-top: 11px;
+}
+.info img {
+  max-width: 100%;
+  height: 660px;
+  width: 660px;
+}
+.form-question {
+  margin-top: 42px;
+}
+.info {
+  width: var(--containerWidth);
+  margin: auto;
+  display: flex;
+}
+.work-info {
+  margin-top: 43px;
+}
+.info-form p {
+  margin-bottom: 44px;
+}
+.info-input-groups {
+  margin-top: 43px;
+}
+.required::after {
   content: "*";
 }
-.user-info-input-group > input {
-  height: 40px;
-  width: 340px;
-  background-color: transparent;
-  border: 0.8px solid var(--borderGray);
-  padding: 9px 0;
-  padding-left: 20px;
-  font-size: var(--smallFont);
-  color: var(--black);
+.submit-button {
+  background: #208298;
+  font-weight: var(--boldFont);
+  color: #fff;
+  padding: 10px 29px;
+  width: 180px;
+  height: 56px;
+  border-radius: 42px;
+  border: none;
 }
-.required-fields-info {
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 47px;
+}
+.arrows {
+  width: var(--containerWidth);
+  margin: auto;
   padding: 20px 0;
-  margin-top: 50px;
-  color: var(--borderGray);
-  width: 365px;
-  border-top: 0.8px solid var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.user-info img {
-  flex: 1;
-  max-width: 100%;
-  height: auto;
+.arrows button {
+  margin: 0px 40px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }

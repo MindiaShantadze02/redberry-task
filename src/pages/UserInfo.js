@@ -6,7 +6,7 @@ const UserInfo = () => {
         <div className="user-info">
             <div className="user-info-form-wrapper">
                 <div className="user-info-form">
-                    <form>
+                    <form id="user-form">
                         <div className="user-info-input-group">
                             <label htmlFor="name">სახელი</label>
                             <input type="text" id="first-name" />
@@ -22,6 +22,7 @@ const UserInfo = () => {
                     </form>
                 </div>
                 <span className="required-fields-info">
+                    <hr />
                     *-ით მონიშნული ველების შევსება სავალდებულოა
                 </span>
             </div>
