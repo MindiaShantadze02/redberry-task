@@ -1,5 +1,5 @@
 // Importing CSS
-import './app.css';
+import './App.css';
 
 // Importing Hooks
 import { useState } from "react";
