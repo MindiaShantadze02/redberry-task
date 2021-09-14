@@ -2,31 +2,26 @@
 import { useContext } from "react";
 
 // Importing components
-import Navbar from "./Navbar";
-import UserInfo from "../pages/UserInfo";
-import CovidInfo from "../pages/CovidInfo";
-import VaccinationInfo from "../pages/VaccinationInfo";
-import WorkInfo from "../pages/WorkInfo";
-import Arrows from "./Arrows";
+import UserPage from "../pages/UserPage";
+import CovidPage from "../pages/CovidPage";
+import VaccinationPage from "../pages/VaccinationPage";
+import RecommendationPage from "../pages/RecommendationPage";
 
 // Importing app context
 import { AppContext } from "../context/AppState";
 
 const Form = () => {
-
-    // Defining array of pages
-    const Pages = [<UserInfo />,<CovidInfo />,<VaccinationInfo />,<WorkInfo />];
-    
-    // Using context
     const { currentPage } = useContext(AppContext);
-
-    return ( 
-        <div className="form-page">
-            <Navbar />
-            {Pages[currentPage]}
-            <Arrows />
-        </div>
-     );
+    switch (currentPage) {
+        case 1:
+            return <UserPage />;
+        case 2: 
+            return <CovidPage />
+        case 3:
+            return <VaccinationPage />
+        case 4:
+            return <RecommendationPage />
+    }
 }
  
 export default Form;

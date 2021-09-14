@@ -6,23 +6,22 @@ import { useState } from "react";
 
 // Importing components
 import Start from "./components/Start";
-import Form from "./components/Form";
 
 // importing context provider
 import { AppState } from "./context/AppState";
-
+// Importing components
+import Wrapper from './components/Wrapper';
 function App() {
 
   // For changing from state to form component
-  const [displayForm, setDisplayForm] = useState(false);
+  const [displayWrapper, setDisplayWrapper] = useState(false);
   
   return (
     <AppState>
       <main className="app">
-        {displayForm ? <Form /> : <Start setDisplayForm={setDisplayForm} />}
+        {displayWrapper ? <Wrapper /> : <Start setDisplayWrapper={setDisplayWrapper} />}
       </main>
     </AppState>
-   
   );
 }
 
