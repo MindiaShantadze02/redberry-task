@@ -119,3 +119,10 @@ body {
 .text-danger {
   color: #F15524;
 }
+.additional-info {
+  color: var(--black);
+  margin-top: 20px;
+}
+.additional-info a {
+  color: #1289AE;
+}
