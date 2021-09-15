@@ -80,8 +80,8 @@ const UserInfo = () => {
     const handleEmailChange = email => {
         setEmail(email);
 
-        const emailRegex = /[\w]{3,255}?[a-zA-Z0-9]{3,255}@[a-z]{2,50}\.[a-z]{2,4}$/;
-        const redberryRegex = /[\w]{3,255}?[a-zA-Z0-9]{3,255}@redberry\.ge$/;
+        const emailRegex = /^[\w]{3,255}?[a-zA-Z0-9]{0,255}@[a-z]{2,50}\.[a-z]{2,4}$/;
+        const redberryRegex = /^[\w]{3,255}?[a-zA-Z0-9]{0,255}@redberry\.ge$/;
 
         let error;
         

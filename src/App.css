@@ -66,24 +66,26 @@ body {
   flex: 2;
 }
 .input-group {
-  margin-top: 42px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
 }
 .input-group > h3 {
   margin-bottom: 10px;
 }
+.input-group-item {
+  margin-top: 10px;
+}
 .input-group-item > label {
   margin-left: 10px;
-}
-.input-group-item > input[type="text"] {
-  background-color: red;
 }
 .required:after {
   content: "*";
 }
 .text-input {
-  height: 50px;
+  height: 45px;
+  padding-left: 15px;
+  width: 100%;
   background-color: transparent;
   border: 0.8px solid var(--black);
   font-size: var(--smallSize);
