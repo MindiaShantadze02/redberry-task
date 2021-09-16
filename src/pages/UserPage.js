@@ -94,8 +94,6 @@ const UserInfo = () => {
         }
 
         setEmailErr(error);
-
-        setEmailErr(error);
     }
 
 
