@@ -95,7 +95,10 @@ const WorkInfo = () => {
             </div>
             <div className="arrows">
                 <button>
-                    <img src={previous_svg} alt="previous" onClick={previousPage} />
+                    <img src={previous_svg} alt="previous" />
+                </button>
+                <button>
+                        <img src={next_svg} alt="next" />
                 </button>
             </div>
         </div>

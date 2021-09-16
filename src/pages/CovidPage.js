@@ -4,7 +4,7 @@ import { useContext , useState , useEffect } from "react";
 // Importing images
 import covid19 from "../imgs/vaccinate2.png";
 import next_svg from "../imgs/next.svg"
-import next_uncompleted from "../imgs/next-uncompleted-clicked.svg";
+import next_uncompleted_clicked from "../imgs/next-uncompleted-clicked.svg";
 import previous_svg from "../imgs/previous.svg"
 
 // Importing context
@@ -281,7 +281,7 @@ const CovidInfo = () => {
                 ) :
                 (
                     <button onClick={setErrors}>
-                        <img src={next_uncompleted} alt="next-uncompleted" />
+                        <img src={next_uncompleted_clicked} alt="next-uncompleted" />
                     </button>
                 )
                 }

@@ -21,7 +21,6 @@ const Form = () => {
             return <VaccinationPage />
         case 4:
             return <RecommendationPage />
-        default:
     }
 }
  
