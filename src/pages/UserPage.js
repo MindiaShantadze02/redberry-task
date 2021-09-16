@@ -124,7 +124,7 @@ const UserInfo = () => {
     }
 
     return ( 
-        <div className="user-page">
+        <div className="user-info">
             <div className="content-wrapper">
                 <section className="form-wrapper">
                     <form id="user-form">

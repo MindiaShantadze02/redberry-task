@@ -229,7 +229,7 @@ const CovidInfo = () => {
                             <div className="input-group-item">
                                 <input 
                                  className="text-input"
-                                 type="text"
+                                 type="number"
                                  name="antibody-test-number"
                                  id="antibody-test-number" 
                                  placeholder="ანტისხეულების რაოდენობა"

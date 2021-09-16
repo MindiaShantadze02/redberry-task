@@ -20,7 +20,13 @@ import {
     // Vaccination info
     SET_ISVACCINATED,
     SET_VACCINATIONDOSE,
-    SET_WAITING_FOR
+    SET_WAITING_FOR,
+
+    // Recommendation info
+    SET_ONLINE_MEETINGS,
+    SET_OFFICE_WORK_DAYS,
+    SET_PHYSICAL_MEETINGS,
+    SET_OPINION_ABOUT_ENV
 } from "./types";
 
 // App context
@@ -45,7 +51,13 @@ export const initialState = {
     // Vaccination info
     isVaccinated: "",
     vaccinationDose: "",
-    waitingFor: ""
+    waitingFor: "",
+
+    // Reccomendations info
+    onlineMeetings: "",
+    officeWorkDays: "",
+    physicalMeetings: "",
+    opinionAboutEnv: ""
 }
 
 // Context provider
@@ -133,7 +145,31 @@ export const AppState = (props) => {
             payload: input
         });
     }
-
+        // functions for setting reccomendations info
+    const setOnlineMeetingsDays = input => {
+        dispatch({
+            type: SET_ONLINE_MEETINGS,
+            payload: input
+        });
+    }
+    const setOfficeWorkDays = input => {
+        dispatch({
+            type: SET_OFFICE_WORK_DAYS,
+            payload: input
+        });
+    }
+    const setPhysicalMeetings = input => {
+        dispatch({
+            type: SET_PHYSICAL_MEETINGS,
+            payload: input
+        });
+    }
+    const setOpinionAboutEnv = input => {
+        dispatch({
+            type: SET_OPINION_ABOUT_ENV,
+            payload: input
+        });
+    }
     return <AppContext.Provider value={{
         currentPage: state.currentPage,
         nextPage,
@@ -168,7 +204,18 @@ export const AppState = (props) => {
 
         setIsVaccinated,
         setVaccinationDose,
-        setWaitingFor
+        setWaitingFor,
+
+        // Recommendation info state
+        onlineMeetingsDays: state.onlineMeetingsDays,
+        officeWorkDays: state.officeWorkDays,
+        physicalMeetings: state.physicalMeetings,
+        opinionAboutEnv: state.opinionAboutEnv,
+
+        setOnlineMeetingsDays,
+        setOfficeWorkDays,
+        setPhysicalMeetings,
+        setOpinionAboutEnv
     }}>
         {props.children}
     </AppContext.Provider>

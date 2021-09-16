@@ -18,7 +18,11 @@ import {
     // Vaccination info
     SET_ISVACCINATED,
     SET_VACCINATIONDOSE,
-    SET_WAITING_FOR
+    SET_WAITING_FOR,
+    SET_ONLINE_MEETINGS,
+    SET_OFFICE_WORK_DAYS,
+    SET_PHYSICAL_MEETINGS,
+    SET_OPINION_ABOUT_ENV
 } from "./types";
 
 const AppReducer = (state, action) => {
@@ -94,7 +98,26 @@ const AppReducer = (state, action) => {
             }
 
         // Setting recommendation form state
-
+        case SET_ONLINE_MEETINGS:
+            return {
+                ...state,
+                onlineMeetingsDays: action.payload
+            }
+        case SET_OFFICE_WORK_DAYS:
+            return {
+                ...state,
+                officeWorkDays: action.payload
+            }
+        case SET_PHYSICAL_MEETINGS:
+            return {
+                ...state,
+                physicalMeetings: action.payload
+            }
+        case SET_OPINION_ABOUT_ENV:
+            return {
+                ...state,
+                opinionAboutEnv: action.payload
+            }
 
         // return state if default
         default:
