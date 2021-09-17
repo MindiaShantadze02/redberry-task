@@ -1,3 +1,5 @@
+@import url("//cdn.web-fonts.ge/fonts/bpg-banner-caps/css/bpg-banner-caps.min.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -17,23 +19,55 @@
 body {
   background: var(--lightgray);;
 }
+@keyframes slideStartText {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .start-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 343px;
+  height: 100vh;
+  margin-top: 262px;
 }
-.star-page img {
+.start-page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.start-img-wrapper {
+  padding: 81px 177px 97px 178px;
+  z-index: 10;
+}
+.start-page-img {
+  background-image: url(./imgs/vector.png);
   width: 100px;
   height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 50%;
 }
-.start-page a {
+.start-button {
+  width: 498px;
+  height: 179px;
   text-align: center;
   font-size: var(--largeSize);
   font-weight: var(--boldFont);
   color: var(--black);
   text-decoration: none;
-  margin-top: 101px;
+  animation: slideStartText 1s ease forwards;
+}
+.start-button a {
+  color: var(--black);
+  text-decoration: none;
+  font-family: "BPG Banner Caps", sans-serif;
+  line-height: 36px;
 }
 .start-page a:hover {
   text-shadow: 5px 2px 0 gray;
@@ -188,9 +222,13 @@ body {
   width: 949px;
   height: 892px;
 }
+.vaccination-info .img-wrapper img {
+  margin-top: 54px;
+}
 .recommendation-info .img-wrapper img {
   width: 703px;
   height: 703px;
+  margin-top: 71px;
 }
 #recommendation-form {
   display: flex;
@@ -229,15 +267,6 @@ body {
 .app-wrapper {
   position: relative;
 }
-.figure {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background-color: red;
-  z-index: 100;
-  left: 50%;
-  top: 50%;
-}
 .radio {
   display: flex;
   align-items: center;
@@ -271,4 +300,47 @@ body {
 }
 input:checked + .radio-dot::after {
   display: block;
+}
+.rectangle {
+  position: absolute;
+  width: 622px;
+  height: 75px;
+  right: 320px;
+  top: 324px;
+  z-index: 100;
+  background-color: #D6D16E;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.circle {
+  position: absolute;
+  width: 229px;
+  height: 229px;
+  top: 341px;
+  left: 841px;
+  background-color: #DD3939;
+  opacity: 0.7;
+  z-index: 100;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.star-shape {
+  position: absolute;
+  background: url(./imgs/star-shape.svg);
+  width: 288px;
+  height: 312px;
+  top: 120px;
+  left: 971px;
+  opacity: 0.7;
+  transition: 0.5s;
+}
+.heart {
+  position: absolute;
+  top: 225px;
+  left: 1085px;
+  height: 172px;
+  width: 195px;
+  background-image: url(./imgs/heart.svg);
+  opacity: 0.7;
+  transition: 0.5s;
 }

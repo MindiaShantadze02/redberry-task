@@ -9,8 +9,18 @@ const Start = ({setComponentToDisplay}) => {
 
     return ( 
         <div className="start-page">
-            <img src={vector} alt="vector" />
-            <a href="#" onClick={switchToWrapper}>კითხვარის <br /> დაწყება</a>
+            <div className="start-page-content">
+                <div className="start-img-wrapper">
+                    <div className="start-page-img"></div>
+                </div>
+                <div className="start-button">
+                    <a href="#" onClick={switchToWrapper}>
+                        კითხვარის
+                        <br />
+                        დაწყება
+                        </a>
+                </div>
+            </div>
         </div>
      );
 }
