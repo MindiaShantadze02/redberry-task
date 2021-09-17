@@ -9,8 +9,9 @@ import RecommendationPage from "../pages/RecommendationPage";
 
 // Importing app context
 import { AppContext } from "../context/AppState";
+import ThankYou from "./ThankYou";
 
-const Form = () => {
+const Form = ({setComponentToDisplay}) => {
     const { currentPage } = useContext(AppContext);
     switch (currentPage) {
         case 1:
@@ -20,7 +21,7 @@ const Form = () => {
         case 3:
             return <VaccinationPage />
         case 4:
-            return <RecommendationPage />
+            return <RecommendationPage setComponentToDisplay={setComponentToDisplay} />
     }
 }
  

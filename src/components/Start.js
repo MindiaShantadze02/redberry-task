@@ -1,10 +1,10 @@
 // Importing vector image
 import vector from "../imgs/vector.png";
-const Start = ({setDisplayWrapper}) => {
+const Start = ({setComponentToDisplay}) => {
     
     //Function for changing displayForm from false to true
     const switchToWrapper = () => {
-        setDisplayWrapper(true);
+        setComponentToDisplay("Wrapper");
     }
 
     return ( 

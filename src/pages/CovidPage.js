@@ -4,7 +4,7 @@ import { useContext , useState , useEffect } from "react";
 // Importing images
 import covid19 from "../imgs/vaccinate2.png";
 import next_svg from "../imgs/next.svg"
-import next_uncompleted_clicked from "../imgs/next-uncompleted-clicked.svg";
+import next_uncompleted from "../imgs/next-uncompleted-clicked.svg";
 import previous_svg from "../imgs/previous.svg"
 
 // Importing context
@@ -106,7 +106,15 @@ const CovidInfo = () => {
         }
     }
 
-    
+    const [uncompletedError, setUncompletedError] = useState(false);
+
+    const showFillFieldErr = () => {
+        setUncompletedError(true);
+        setTimeout(()=> {
+            setUncompletedError(false);
+        }, 2000);
+    };
+
     const canSubmit = isFilled1() || isFilled2() || noOrCurrentlyHave;
 
     // Variable for checking if user can submit or not
@@ -279,11 +287,12 @@ const CovidInfo = () => {
                             <img src={next_svg} alt="next" />
                     </button>
                 ) :
-                (
-                    <button onClick={setErrors}>
-                        <img src={next_uncompleted_clicked} alt="next-uncompleted" />
+                <button onClick={showFillFieldErr}>
+                        {uncompletedError && (
+                            <p className="fill-fields-err">ჯერ შეავსე &lt;3</p>
+                        )}
+                        <img src={next_uncompleted} alt="uncompleted" />
                     </button>
-                )
                 }
 
             </div>

@@ -1,5 +1,5 @@
 // Importing hooks
-import { useContext } from "react";
+import { useContext , useState, useEffect } from "react";
 
 // Importing images
 import bike from "../imgs/bike.png";
@@ -9,10 +9,11 @@ import previous_svg from "../imgs/previous.svg"
 // Importing context
 import { AppContext } from "../context/AppState";
 
-const WorkInfo = () => {
+const WorkInfo = ({setComponentToDisplay}) => {
     // Using context
     const {
         previousPage,
+        nextPage,
 
         onlineMeetingsDays,
         officeWorkDays,
@@ -31,6 +32,22 @@ const WorkInfo = () => {
     const handlePhysicalMeetings = ev => setPhysicalMeetings(ev.target.value);
     const handleOpinionAboutEnv = ev => setOpinionAboutEnv(ev.target.value);
 
+    // Showing thank you page if everything is ok
+    const [showThankYouPage, setShowThankYouPage] = useState(false);
+    
+    useEffect(()=> {
+        if (!onlineMeetingsDays || !officeWorkDays) 
+            setShowThankYouPage(false);
+        else setShowThankYouPage(true);
+    },[
+        onlineMeetingsDays,
+        officeWorkDays
+    ]);
+
+    const submitForm = (ev) => {
+        ev.preventDefault();
+        if (showThankYouPage) setComponentToDisplay("ThankYou");
+    }
     return ( 
         <div className="recommendation-info">
             
@@ -42,7 +59,7 @@ const WorkInfo = () => {
                     <br />
                     <br />
                     პანდემიის პერიოდში ერთმანეთსაც იშვიათად ვნახულობთ პირისპირ და ყოველდღიური კომუნიკაციაც გაიშვიათდა.</p>
-                    <form id="recommendation-form">
+                    <form id="recommendation-form" onSubmit={submitForm}>
                         <div className="input-group">
                                 <h3 className="required">რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?</h3>
                             <div className="input-group-item">

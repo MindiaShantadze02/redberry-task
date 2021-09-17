@@ -54,6 +54,15 @@ const VaccinationInfo = () => {
     }
     const [canSubmit, setCanSubmit] = useState(false);
 
+    const [uncompletedError, setUncompletedError] = useState(false);
+
+    const showFillFieldErr = () => {
+        setUncompletedError(true);
+        setTimeout(()=> {
+            setUncompletedError(false);
+        }, 1500);
+    };
+
     useEffect(()=> {
         if (isFilled()) setCanSubmit(true);
         else setCanSubmit(false);
@@ -180,7 +189,7 @@ const VaccinationInfo = () => {
                                 )}
                                 {waitingFor === "გადატანილი მაქვს და ვგეგმავ აცრას" && (
                                     <p className="info-text">
-                                        ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება.
+                                        ახალი პროტოკოლით კოვიდის გადატანიდან 1 თვის შემდეგ შეგიძლიათ ვაქცინის გაკეთება. <br />
                                         👉 რეგისტრაციის ლინკი <a href="https://booking.moh.gov.ge/">https://booking.moh.gov.ge/</a>
                                     </p>
                                 )}
@@ -203,7 +212,10 @@ const VaccinationInfo = () => {
                     </button>
                 ) :
                 (
-                    <button>
+                    <button onClick={showFillFieldErr}>
+                        {uncompletedError && (
+                            <p className="fill-fields-err">ჯერ შეავსე &lt;3</p>
+                        )}
                         <img src={next_uncompleted} alt="uncompleted" />
                     </button>
                 )}

@@ -1,7 +1,9 @@
+// importing hooks
+import { useState , useContext } from "react";
+
 // Importing components
 import Navbar from "./Navbar";
 import Form from "./Form";
-import { useState , useContext } from "react";
 
 // Importing vectors
 import next_vector from "../imgs/next.svg";
@@ -9,7 +11,7 @@ import previous_vector from "../imgs/previous.svg";
 
 import { AppContext } from "../context/AppState";
 
-const Wrapper = () => {
+const Wrapper = ({setComponentToDisplay}) => {
     // Using context
     const { 
         firstName ,
@@ -20,7 +22,8 @@ const Wrapper = () => {
     return ( 
         <div className="app-wrapper">
             <Navbar currentPage={currentPage} />
-            <Form currentPage={currentPage} />
+            <Form currentPage={currentPage} setComponentToDisplay={setComponentToDisplay} />
+            <div className="figure"></div>
         </div>
      );
 }
