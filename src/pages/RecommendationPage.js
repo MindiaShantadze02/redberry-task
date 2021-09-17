@@ -13,24 +13,17 @@ const WorkInfo = ({setComponentToDisplay}) => {
     // Using context
     const {
         previousPage,
-        nextPage,
 
         onlineMeetingsDays,
         officeWorkDays,
         physicalMeetings,
         opinionAboutEnv,
 
-        setOnlineMeetingsDays,
-        setOfficeWorkDays,
-        setPhysicalMeetings,
-        setOpinionAboutEnv
+        setValue
     } = useContext(AppContext);
 
     // Functions for handling input change
-    const handleOnlineMeetingDays = ev => setOnlineMeetingsDays(ev.target.value);
-    const handleOfficeWorkDays = ev => setOfficeWorkDays(ev.target.value);
-    const handlePhysicalMeetings = ev => setPhysicalMeetings(ev.target.value);
-    const handleOpinionAboutEnv = ev => setOpinionAboutEnv(ev.target.value);
+    const handleChange = ev => setValue(ev.target.name ,ev.target.value);
 
     // Showing thank you page if everything is ok
     const [showThankYouPage, setShowThankYouPage] = useState(false);
@@ -65,11 +58,11 @@ const WorkInfo = ({setComponentToDisplay}) => {
                             <label className="input-group-item radio" htmlFor="twice">
                                 <input
                                  type="radio" 
-                                 name="work-info-online-meetings" 
+                                 name="onlineMeetingsDays" 
                                  id="twice" 
                                  value="კვირაში ორჯერ"
                                  className="info-label"
-                                 onChange={handleOnlineMeetingDays} 
+                                 onChange={handleChange} 
                                  checked={onlineMeetingsDays === "კვირაში ორჯერ"}
                                 />
                                 <div className="radio-dot"></div>
@@ -79,11 +72,11 @@ const WorkInfo = ({setComponentToDisplay}) => {
                             <label className="input-group-item radio" htmlFor="once">
                                 <input
                                  type="radio" 
-                                 name="work-info-online-meetings" 
+                                 name="onlineMeetingsDays" 
                                  id="once" 
                                  value="კვირაში ერთხელ"
                                  className="info-label" 
-                                 onChange={handleOnlineMeetingDays} 
+                                 onChange={handleChange} 
                                  checked={onlineMeetingsDays === "კვირაში ერთხელ"}
                                 />
                                 <div className="radio-dot"></div>
@@ -93,11 +86,11 @@ const WorkInfo = ({setComponentToDisplay}) => {
                             <label className="input-group-item radio"htmlFor="once-in-two-weeks">
                                 <input 
                                  type="radio" 
-                                 name="work-info-online-meetings" 
+                                 name="onlineMeetingsDays" 
                                  id="once-in-two-weeks" 
                                  value="ორ კვირაში ერთხელ"
                                  className="info-label"
-                                 onChange={handleOnlineMeetingDays}
+                                 onChange={handleChange}
                                  checked={onlineMeetingsDays === "ორ კვირაში ერთხელ"}
                                 />
                                 <div className="radio-dot"></div>
@@ -106,11 +99,11 @@ const WorkInfo = ({setComponentToDisplay}) => {
                             <label className="input-group-item radio" htmlFor="once-in-month">
                                 <input 
                                  type="radio"
-                                 name="work-info-online-meetings"
+                                 name="onlineMeetingsDays"
                                  id="once-in-month"
                                  value="თვეში ერთხელ"
                                  className="info-label"
-                                 onChange={handleOnlineMeetingDays} 
+                                 onChange={handleChange} 
                                  checked={onlineMeetingsDays === "თვეში ერთხელ"}
                                 />
                                 <div className="radio-dot"></div>
@@ -124,7 +117,7 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  type="radio" 
                                  id="zero"
                                  value="0"
-                                 onChange={handleOfficeWorkDays}
+                                 onChange={handleChange}
                                  checked={officeWorkDays === "0"}
                                  name="officeWorkDays"
                                 />
@@ -136,7 +129,7 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  type="radio" 
                                  id="one"
                                  value="1"
-                                 onChange={handleOfficeWorkDays} 
+                                 onChange={handleChange} 
                                  checked={officeWorkDays === "1"}
                                  name="officeWorkDays"
                                 />
@@ -148,7 +141,7 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  type="radio" 
                                  id="two" 
                                  value="2"
-                                 onChange={handleOfficeWorkDays}
+                                 onChange={handleChange}
                                  checked={officeWorkDays === "2"}
                                  name="officeWorkDays"
                                 />
@@ -160,7 +153,7 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  type="radio" 
                                  id="three" 
                                  value="3"
-                                 onChange={handleOfficeWorkDays}
+                                 onChange={handleChange}
                                  checked={officeWorkDays === "3"}
                                  name="officeWorkDays"
                                 />
@@ -172,7 +165,7 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  type="radio" 
                                  id="four" 
                                  value="4"
-                                 onChange={handleOfficeWorkDays}
+                                 onChange={handleChange}
                                  checked={officeWorkDays === "4"}
                                  name="officeWorkDays"
                                 />
@@ -184,7 +177,7 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  type="radio" 
                                  id="five" 
                                  value="5"
-                                 onChange={handleOfficeWorkDays}
+                                 onChange={handleChange}
                                  checked={officeWorkDays === "5"}
                                  name="officeWorkDays"
                                 />
@@ -196,16 +189,18 @@ const WorkInfo = ({setComponentToDisplay}) => {
                             <h3>რას ფიქრობ ფიზიკურ შეკრებებზე?</h3>
                             <textarea 
                             id="phyisical-meetings"
+                            name="physicalMeetings"
                             className="textarea"
-                            onChange={handlePhysicalMeetings}
+                            onChange={handleChange}
                             value={physicalMeetings}></textarea>
                         </div>
                         <div className="input-group">
                             <h3>რას ფიქრობ არსებულ გარემოზე:<br /> რა მოგწონს, რას დაამატებდი, რას შეცვლიდი?</h3>
                             <textarea 
-                            id="current-envorinment" 
+                            id="current-envorinment"
+                            name="opinionAboutEnv" 
                             className="textarea"
-                            onChange={handleOpinionAboutEnv}
+                            onChange={handleChange}
                             value={opinionAboutEnv}></textarea>
                         </div>
                         <div className="end-button-wrapper">

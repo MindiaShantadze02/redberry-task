@@ -20,24 +20,27 @@ const VaccinationInfo = () => {
         vaccinationDose,
         waitingFor,
 
-        setIsVaccinated,
         setVaccinationDose,
-        setWaitingFor
+        setWaitingFor,
+
+        setValue
     } = useContext(AppContext);
 
     // Functions for handling input change
     const handleIsVaccinated = ev => {
-        if (ev.target.value === "კი") {
+        const { name, value } = ev.target;
+
+        if (value === "კი") {
             setWaitingFor("");
         }
-        if (ev.target.value === "არა") {
+        if (value === "არა") {
             setVaccinationDose("");
         }
 
-        setIsVaccinated(ev.target.value);
+        setValue(name, value);
     }
-    const handleVaccinationDose = ev => setVaccinationDose(ev.target.value);
-    const handleWaitingFor = ev => setWaitingFor(ev.target.value);
+    const handleVaccinationDose = ev => setValue(ev.target.name, ev.target.value);
+    const handleWaitingFor = ev => setValue(ev.target.name, ev.target.value);
     
     // Checking if inputs are filled or not
 

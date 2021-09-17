@@ -16,13 +16,11 @@ import {
     SET_HADCOVID_DATE,
 
     // Vaccination info
-    SET_ISVACCINATED,
     SET_VACCINATIONDOSE,
     SET_WAITING_FOR,
-    SET_ONLINE_MEETINGS,
-    SET_OFFICE_WORK_DAYS,
-    SET_PHYSICAL_MEETINGS,
-    SET_OPINION_ABOUT_ENV
+
+    // Setting value
+    SET_VALUE
 } from "./types";
 
 const AppReducer = (state, action) => {
@@ -37,29 +35,7 @@ const AppReducer = (state, action) => {
                 ...state,
                 currentPage: state.currentPage - 1
             }
-
-        // Setting personal form state
-        case SET_FIRSTNAME:
-            return {
-                ...state,
-                firstName: action.payload
-            }
-        case SET_LASTNAME:
-            return {
-                ...state,
-                lastName: action.payload
-            }
-        case SET_EMAIL:
-            return {
-                ...state,
-                email: action.payload
-            }
         // Setting Covid 19 form state
-        case SET_HADCOVID:
-            return {
-                ...state,
-                hadCovid: action.payload
-            }
         case SET_ANTIBODY_TEST:
             return {
                 ...state,
@@ -81,11 +57,6 @@ const AppReducer = (state, action) => {
                 hadCovidDate: action.payload
             }
         // Setting Vaccination form state
-        case SET_ISVACCINATED:
-            return {
-                ...state,
-                isVaccinated: action.payload
-            }
         case SET_VACCINATIONDOSE:
             return {
                 ...state,
@@ -97,26 +68,11 @@ const AppReducer = (state, action) => {
                 waitingFor: action.payload
             }
 
-        // Setting recommendation form state
-        case SET_ONLINE_MEETINGS:
+        // Setting values if other state elements are not depended on it
+        case SET_VALUE:
             return {
                 ...state,
-                onlineMeetingsDays: action.payload
-            }
-        case SET_OFFICE_WORK_DAYS:
-            return {
-                ...state,
-                officeWorkDays: action.payload
-            }
-        case SET_PHYSICAL_MEETINGS:
-            return {
-                ...state,
-                physicalMeetings: action.payload
-            }
-        case SET_OPINION_ABOUT_ENV:
-            return {
-                ...state,
-                opinionAboutEnv: action.payload
+                [action.payload.name]: action.payload.value
             }
 
         // return state if default

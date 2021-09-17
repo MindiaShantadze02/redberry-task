@@ -22,23 +22,26 @@ const CovidInfo = () => {
         antibodyDate,
         hadCovidDate,
 
-        setHadCovid,
         setDoneAntibodyTest,
         setAntibodyDate,
         setAntibodyNumber,
-        setHadCovidDate
+        setHadCovidDate,
+        
+        setValue
     } = useContext(AppContext);
     
     // Input handlers
     
     //      checking if user had covid or not
     const handleHadCovid = ev => {
-        if (ev.target.value === "არა" || ev.target.value === "ახლა მაქვს") {
+        const { name, value } = ev.target;
+
+        if (value === "არა" || value === "ახლა მაქვს") {
             setDoneAntibodyTest("");
             setAntibodyDate("");
             setAntibodyNumber("");
         }
-        setHadCovid(ev.target.value);
+        setValue(name, value);
     };    
     //      checking if user has done antibody test or not
     const handleDoneAntibodyTest = doneABTest => {
@@ -73,10 +76,7 @@ const CovidInfo = () => {
     const handleHadCovidDate = ev => setHadCovidDate(ev.target.value);
     
     // Error state
-
     const [antibodyNumberErr, setAntibodyNumberErr] = useState("");
-    const [antibodyDateErr, setAntibodyDateErr] = useState("");
-    const [hadCovidDateErr, setHadCovidDateErr] = useState("");
     
     // Checking if form is filled
     const noOrCurrentlyHave = hadCovid === "არა" || hadCovid === "ახლა მაქვს";
@@ -137,17 +137,6 @@ const CovidInfo = () => {
         canSubmit 
     ]);
 
-    const setErrors = () => {
-        if (!antibodyDate) setAntibodyDateErr("თარიღის შეყვანა სავალდებულოა");
-        else setAntibodyDateErr("");
-
-        if (!antibodyNumber) setAntibodyNumberErr("ანტისხეულების რაოდენობის შეყვანა სავალდებულოა");
-        else setAntibodyNumberErr("");
-        
-        if (!hadCovidDate) setHadCovidDateErr("თარიღის შეყვანა სავალდებულოა");
-        else setHadCovidDateErr("");
-    }
-
     return ( 
         <div className="covid-info">
             <div className="content-wrapper">
@@ -158,7 +147,7 @@ const CovidInfo = () => {
                             <label className="input-group-item radio" htmlFor="have-covid">
                                 <input
                                  type="radio"
-                                 name="covid-info"
+                                 name="hadCovid"
                                  id="have-covid"
                                  onChange={handleHadCovid}
                                  value="კი"
@@ -170,7 +159,7 @@ const CovidInfo = () => {
                             <label className="input-group-item radio" htmlFor="doesnt-have-covid">
                                 <input
                                  type="radio" 
-                                 name="covid-info" 
+                                 name="hadCovid" 
                                  id="doesnt-have-covid" 
                                  onChange={handleHadCovid}
                                  value="არა"
@@ -182,7 +171,7 @@ const CovidInfo = () => {
                             <label className="input-group-item radio" htmlFor="currently-have-covid">
                                 <input
                                  type="radio" 
-                                 name="covid-info" 
+                                 name="hadCovid" 
                                  id="currently-have-covid"
                                  value="ახლა მაქვს" 
                                  onChange={handleHadCovid}
@@ -236,9 +225,6 @@ const CovidInfo = () => {
                                  value={antibodyDate}
                                 />
                             </div>
-                            {antibodyDateErr && (
-                                <p class="text-danger">{antibodyDateErr}</p>
-                            )}
                             <div className="input-group-item">
                                 <input 
                                  className="text-input"
@@ -270,9 +256,6 @@ const CovidInfo = () => {
                                  value={hadCovidDate}
                                  />
                             </div>
-                            {hadCovidDateErr && (
-                                <p className="text-danger">{hadCovidDateErr}</p>
-                            )}
                         </div>
                     )}
                     </form>

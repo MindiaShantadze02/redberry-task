@@ -17,12 +17,9 @@ const UserInfo = () => {
         firstName,
         lastName,
         email,
-
-        setFirstName,
-        setLastName,
-        setEmail,
         
-        currentPage,
+        setValue,
+        
         nextPage
         } = useContext(AppContext);
 
@@ -34,19 +31,22 @@ const UserInfo = () => {
     // Input and error handler functions
 
     //      getting and validating first name
-    const handleFirstNameChange = fName=> {
-        setFirstName(fName);
+    const handleFirstNameChange = ev => {
+
+        const {name ,value} = ev.target;
+
+        setValue(name, value);
 
         const regex = /^[a-zA-Zა-ჰ]{3,255}$/;
 
         let error;
-        if (!fName) {
+        if (!value) {
             error = "სახელის ველი სავალდებულოა";
-        } else if (fName.length > 0 && fName.length < 3 ) {
+        } else if (value.length > 0 && value.length < 3 ) {
             error = "სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოგან";
-        } else if (fName.length > 255) {
+        } else if (value.length > 255) {
             error = "სახელის ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან";
-        } else if (!regex.test(fName)) {
+        } else if (!regex.test(value)) {
             error = "სახელის ველი უნდა შეიცავდეს მხოლოდ ალფაბეტის სიმბოლოებს(ა-ჰ, a-z, A-Z)";
         } else {
             error = null;
@@ -55,19 +55,21 @@ const UserInfo = () => {
         setFirstNameErr(error);
     }
     //      getting and validating last name
-    const handleLastNameChange = lName=> {
-        setLastName(lName);
+    const handleLastNameChange = ev=> {
+        const { name , value } = ev.target;
+
+        setValue(name, value);
 
         const regex = /^[a-zA-Zა-ჰ]{3,255}?$/;
 
         let error;
-        if (!lName) {
+        if (!value) {
             error = "გვარის ველი სავალდებულოა";
-        } else if (lName.length > 0 && lName.length < 3 ) {
+        } else if (value.length > 0 && value.length < 3 ) {
             error = "გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოგან";
-        } else if (lName.length > 255) {
+        } else if (value.length > 255) {
             error = "გვარის ველი უნდა შედგებოდეს მაქსიმუმ 255 სიმბოლოსგან";
-        } else if (!regex.test(lName)) {
+        } else if (!regex.test(value)) {
             error = "გვარის ველი უნდა შეიცავდეს მხოლოდ ალფაბეტის სიმბოლოებს(ა-ჰ, a-z, A-Z)";
         } else {
             error = null;
@@ -77,28 +79,27 @@ const UserInfo = () => {
     }
 
     //      getting and validating email
-    const handleEmailChange = email => {
-        setEmail(email);
+    const handleEmailChange = ev => {
+
+        const { name , value } = ev.target;
+
+        setValue(name, value);
 
         const emailRegex = /^[\w]{3,255}?[a-zA-Z0-9]{0,255}@[a-z]{2,50}\.[a-z]{2,4}$/;
         const redberryRegex = /^[\w]{3,255}?[a-zA-Z0-9]{0,255}@redberry\.ge$/;
 
         let error;
         
-        if (!email) {
+        if (!value) {
             error = "მეილის ველი სავალდებულოა";
-        } else if (!emailRegex.test(email)) {
+        } else if (!emailRegex.test(value)) {
             error = "თქვენს მიერ შეყვანილი მეილი არასწორია";
-        } else if (emailRegex.test(email) && !redberryRegex.test(email)) {
+        } else if (emailRegex.test(value) && !redberryRegex.test(value)) {
             error = "გთხოვთ დარეგისტრირდეთ რედბერის მეილით(youremail@redberry.ge)";
         }
 
         setEmailErr(error);
     }
-
-
-    // Checking if form is submited
-    const [isSubmited, setIsSubmited] = useState(false);
 
     // Checking if user can go to next page or not
     const isValid = !firstNameErr && !lastNameErr && !emailErr;
@@ -131,10 +132,11 @@ const UserInfo = () => {
                         <div className="input-group">
                             <h3 htmlFor="name" className="required">სახელი</h3>
                             <input 
-                            type="text" 
+                            type="text"
+                            name="firstName" 
                             id="first-name" 
                             className="text-input"
-                            onChange={ev => handleFirstNameChange(ev.target.value)}
+                            onChange={handleFirstNameChange}
                             value={firstName} 
                             autoComplete="off" />
                         </div>
@@ -144,10 +146,11 @@ const UserInfo = () => {
                         <div className="input-group">
                             <h3 htmlFor="last-name" className="required">გვარი</h3>
                             <input 
-                            type="text" 
+                            type="text"
+                            name="lastName" 
                             id="last-name" 
                             className="text-input"
-                            onChange={ev => handleLastNameChange(ev.target.value)}
+                            onChange={handleLastNameChange}
                             value={lastName} 
                             autoComplete="off" />
                         </div>
@@ -158,9 +161,10 @@ const UserInfo = () => {
                             <h3 htmlFor="email" className="required">მეილი</h3>
                             <input 
                             type="text" 
+                            name="email"
                             id="email" 
                             className="text-input"
-                            onChange={ev => handleEmailChange(ev.target.value)}
+                            onChange={handleEmailChange}
                             value={email} 
                             autoComplete="off" />
                         </div>

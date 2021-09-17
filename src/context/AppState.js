@@ -5,28 +5,18 @@ import {
     INCREASE_PAGE,
     DECREASE_PAGE,
 
-    // Personal info
-    SET_FIRSTNAME,
-    SET_LASTNAME,
-    SET_EMAIL,
-
     // Covid info
-    SET_HADCOVID,
     SET_ANTIBODY_TEST,
     SET_ANTIBODY_NUMBER,
     SET_ANTIBODY_DATE,
     SET_HADCOVID_DATE,
 
     // Vaccination info
-    SET_ISVACCINATED,
     SET_VACCINATIONDOSE,
     SET_WAITING_FOR,
 
-    // Recommendation info
-    SET_ONLINE_MEETINGS,
-    SET_OFFICE_WORK_DAYS,
-    SET_PHYSICAL_MEETINGS,
-    SET_OPINION_ABOUT_ENV
+    // Setting value
+    SET_VALUE
 } from "./types";
 
 // App context
@@ -76,32 +66,7 @@ export const AppState = (props) => {
     }
 
     /* Functions for getting value from form */
-        // functions for setting personal info
-    const setFirstName = text => {
-        dispatch({
-            type: SET_FIRSTNAME,
-            payload: text
-        });
-    }
-    const setLastName = text => {
-        dispatch({
-            type: SET_LASTNAME,
-            payload: text
-        });
-    }
-    const setEmail = text => {
-        dispatch({
-            type: SET_EMAIL,
-            payload: text
-        });
-    }
         // functions for setting covid info
-    const setHadCovid = input => {
-        dispatch({
-            type: SET_HADCOVID,
-            payload: input
-        })
-    }
     const setDoneAntibodyTest = input => {
         dispatch({
             type: SET_ANTIBODY_TEST,
@@ -127,12 +92,6 @@ export const AppState = (props) => {
         });
     }
         // functions for setting vaccination info
-    const setIsVaccinated = input => {
-        dispatch({
-            type: SET_ISVACCINATED,
-            payload: input
-        });
-    }
     const setVaccinationDose = input => {
         dispatch({
             type: SET_VACCINATIONDOSE,
@@ -145,31 +104,14 @@ export const AppState = (props) => {
             payload: input
         });
     }
-        // functions for setting reccomendations info
-    const setOnlineMeetingsDays = input => {
+    //      function for setting value
+    const setValue = (name, value) => {
         dispatch({
-            type: SET_ONLINE_MEETINGS,
-            payload: input
-        });
+            type: SET_VALUE,
+            payload: { name , value }
+        })
     }
-    const setOfficeWorkDays = input => {
-        dispatch({
-            type: SET_OFFICE_WORK_DAYS,
-            payload: input
-        });
-    }
-    const setPhysicalMeetings = input => {
-        dispatch({
-            type: SET_PHYSICAL_MEETINGS,
-            payload: input
-        });
-    }
-    const setOpinionAboutEnv = input => {
-        dispatch({
-            type: SET_OPINION_ABOUT_ENV,
-            payload: input
-        });
-    }
+
     return <AppContext.Provider value={{
         currentPage: state.currentPage,
         nextPage,
@@ -180,10 +122,6 @@ export const AppState = (props) => {
         lastName: state.lastName,
         email: state.email,
         
-        setFirstName,
-        setLastName,
-        setEmail,
-        
         // Covid info state
         hadCovid: state.hadCovid,
         doneAntibodyTest: state.doneAntibodyTest,
@@ -191,7 +129,6 @@ export const AppState = (props) => {
         antibodyDate: state.antibodyDate,
         hadCovidDate: state.hadCovidDate,
 
-        setHadCovid,
         setDoneAntibodyTest,
         setAntibodyDate,
         setAntibodyNumber,
@@ -202,7 +139,6 @@ export const AppState = (props) => {
         vaccinationDose: state.vaccinationDose,
         waitingFor: state.waitingFor,
 
-        setIsVaccinated,
         setVaccinationDose,
         setWaitingFor,
 
@@ -212,10 +148,8 @@ export const AppState = (props) => {
         physicalMeetings: state.physicalMeetings,
         opinionAboutEnv: state.opinionAboutEnv,
 
-        setOnlineMeetingsDays,
-        setOfficeWorkDays,
-        setPhysicalMeetings,
-        setOpinionAboutEnv
+        // setValue
+        setValue
     }}>
         {props.children}
     </AppContext.Provider>
