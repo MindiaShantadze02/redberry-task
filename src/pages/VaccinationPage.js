@@ -79,7 +79,7 @@ const VaccinationInfo = () => {
                     <form id="vaccination-form">
                         <div className="input-group">
                             <h3 className="required">უკვე აცრილი ხარ?</h3>
-                            <div className="input-group-item">
+                            <label className="input-group-item radio" htmlFor="is-vaccinated">
                                 <input
                                  type="radio" 
                                  name="isVaccinated" 
@@ -88,9 +88,10 @@ const VaccinationInfo = () => {
                                  onChange={handleIsVaccinated}
                                  checked={isVaccinated === "კი"}
                                 />
-                                <label htmlFor="is-vaccinated">კი</label>
-                            </div>
-                            <div className="input-group-item">
+                                <div className="radio-dot"></div>
+                                კი
+                            </label>
+                            <label className="input-group-item radio" htmlFor="is-not-vaccinated">
                                 <input
                                  type="radio" 
                                  name="isVaccinated" 
@@ -99,13 +100,14 @@ const VaccinationInfo = () => {
                                  onChange={handleIsVaccinated} 
                                  checked={isVaccinated === "არა"}
                                 />
-                                <label htmlFor="is-not-vaccinated">არა</label>
-                            </div>
+                                <div className="radio-dot"></div>
+                                არა
+                            </label>
                         </div>
                         {isVaccinated === "კი" && (
                             <div className="input-group">
                                 <h3>აირჩიე რომელ ეტაპზე ხარ:</h3>
-                                <div className="input-group-item">
+                                <label className="input-group-item radio"  htmlFor="f-true-s-upcoming">
                                     <input
                                      type="radio" 
                                      name="vaccinationDose" 
@@ -114,9 +116,10 @@ const VaccinationInfo = () => {
                                      onChange={handleVaccinationDose} 
                                      checked={vaccinationDose === "პირველი დოზა და დარეგისტრირებული ვარ მეორეზე"}
                                     />
-                                    <label htmlFor="f-true-s-upcoming">პირველი დოზა და დარეგისტრირებული ვარ მეორეზე</label>
-                                </div>
-                                <div className="input-group-item">
+                                    <div className="radio-dot"></div>
+                                    პირველი დოზა და დარეგისტრირებული ვარ მეორეზე
+                                </label>
+                                <label className="input-group-item radio" htmlFor="fully-vaccinated">
                                     <input
                                      type="radio" 
                                      name="vaccinationDose" 
@@ -125,9 +128,10 @@ const VaccinationInfo = () => {
                                      onChange={handleVaccinationDose} 
                                      checked={vaccinationDose === "სრულად ვაქცინირებული ვარ"}
                                     />
-                                    <label htmlFor="fully-vaccinated">სრულად ვაქცინირებული ვარ</label>
-                                </div>
-                                <div className="input-group-item">
+                                    <div className="radio-dot"></div>
+                                    სრულად ვაქცინირებული ვარ
+                                </label>
+                                <label className="input-group-item radio" htmlFor="f-true-s-false">
                                     <input
                                      type="radio" 
                                      name="vaccinationDose" 
@@ -136,8 +140,9 @@ const VaccinationInfo = () => {
                                      onChange={handleVaccinationDose} 
                                      checked={vaccinationDose === "პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე"}
                                     />
-                                    <label htmlFor="f-true-s-false">პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე</label>
-                                </div>
+                                    <div className="radio-dot"></div>
+                                    პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე
+                                </label>
                                 {vaccinationDose === "პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე" && (
                                     <p className="info-text">
                                         👉 რომ აღარ გადადო, <br />
@@ -149,7 +154,7 @@ const VaccinationInfo = () => {
                         {isVaccinated === "არა" && (
                             <div className="input-group">
                                 <h3>რას ელოდები?</h3>
-                                <div className="input-group-item">
+                                <label className="input-group-item radio" htmlFor="registered-waiting">
                                     <input
                                      type="radio"
                                      value="დარეგისტრირებული ვარ და ველოდები თარიღს"
@@ -158,9 +163,10 @@ const VaccinationInfo = () => {
                                      checked={waitingFor === "დარეგისტრირებული ვარ და ველოდები თარიღს"}
                                      onChange={handleWaitingFor}
                                     />
-                                    <label htmlFor="registered-waiting">დარეგისტრირებული ვარ და ველოდები თარიღს</label>
-                                </div>
-                                <div className="input-group-item">
+                                    <div className="radio-dot"></div>
+                                    დარეგისტრირებული ვარ და ველოდები თარიღს
+                                </label>
+                                <label className="input-group-item radio" htmlFor="not-planning">
                                     <input
                                      type="radio"
                                      value="არ ვგეგმავ"
@@ -169,9 +175,10 @@ const VaccinationInfo = () => {
                                      checked={waitingFor === "არ ვგეგმავ"}
                                      onChange={handleWaitingFor}
                                     />
-                                    <label htmlFor="not-planning">არ ვგეგმავ</label>
-                                </div>
-                                <div className="input-group-item">
+                                    <div className="radio-dot"></div>
+                                    არ ვგეგმავ
+                                </label>
+                                <label className="input-group-item radio" htmlFor="planning-vaccination">
                                     <input
                                      type="radio"
                                      value="გადატანილი მაქვს და ვგეგმავ აცრას"
@@ -180,8 +187,9 @@ const VaccinationInfo = () => {
                                      checked={waitingFor === "გადატანილი მაქვს და ვგეგმავ აცრას"}
                                      onChange={handleWaitingFor}
                                     />
-                                    <label htmlFor="planning-vaccination">გადატანილი მაქვს და ვგეგმავ აცრას</label>
-                                </div>
+                                    <dot className="radio-dot"></dot>
+                                    გადატანილი მაქვს და ვგეგმავ აცრას
+                                </label>
                                 {waitingFor === "არ ვგეგმავ" && (
                                     <p className="info-text">
                                         👉 <a href="https://booking.moh.gov.ge/">https://booking.moh.gov.ge/</a>

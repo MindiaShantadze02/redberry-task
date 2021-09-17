@@ -62,7 +62,7 @@ const WorkInfo = ({setComponentToDisplay}) => {
                     <form id="recommendation-form" onSubmit={submitForm}>
                         <div className="input-group">
                                 <h3 className="required">რა სიხშირით შეიძლება გვქონდეს საერთო არაფორმალური ონლაინ შეხვედრები, სადაც ყველა სურვილისამებრ ჩაერთვება?</h3>
-                            <div className="input-group-item">
+                            <label className="input-group-item radio" htmlFor="twice">
                                 <input
                                  type="radio" 
                                  name="work-info-online-meetings" 
@@ -72,10 +72,11 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  onChange={handleOnlineMeetingDays} 
                                  checked={onlineMeetingsDays === "კვირაში ორჯერ"}
                                 />
-                                <label htmlFor="twice">კვირაში ორჯერ</label>
-                            </div>
+                                <div className="radio-dot"></div>
+                                კვირაში ორჯერ
+                            </label>
 
-                            <div className="input-group-item">
+                            <label className="input-group-item radio" htmlFor="once">
                                 <input
                                  type="radio" 
                                  name="work-info-online-meetings" 
@@ -85,10 +86,11 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  onChange={handleOnlineMeetingDays} 
                                  checked={onlineMeetingsDays === "კვირაში ერთხელ"}
                                 />
-                                <label htmlFor="once">კვირაში ერთხელ</label>
-                            </div>
+                                <div className="radio-dot"></div>
+                                კვირაში ერთხელ
+                            </label>
 
-                            <div className="input-group-item">
+                            <label className="input-group-item radio"htmlFor="once-in-two-weeks">
                                 <input 
                                  type="radio" 
                                  name="work-info-online-meetings" 
@@ -98,9 +100,10 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  onChange={handleOnlineMeetingDays}
                                  checked={onlineMeetingsDays === "ორ კვირაში ერთხელ"}
                                 />
-                                <label htmlFor="once-in-two-weeks">ორ კვირაში ერთხელ</label>
-                            </div>
-                            <div className="input-group-item">
+                                <div className="radio-dot"></div>
+                                ორ კვირაში ერთხელ
+                            </label>
+                            <label className="input-group-item radio" htmlFor="once-in-month">
                                 <input 
                                  type="radio"
                                  name="work-info-online-meetings"
@@ -110,12 +113,13 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  onChange={handleOnlineMeetingDays} 
                                  checked={onlineMeetingsDays === "თვეში ერთხელ"}
                                 />
-                                <label htmlFor="once-in-month">თვეში ერთხელ</label>
-                            </div>
+                                <div className="radio-dot"></div>
+                                თვეში ერთხელ
+                            </label>
                         </div>
                         <div className="input-group">
                             <h3 className="required">კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?</h3>
-                            <div className="input-group-item">
+                            <label className="input-group-item radio" htmlFor="zero">
                                 <input 
                                  type="radio" 
                                  id="zero"
@@ -124,9 +128,10 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  checked={officeWorkDays === "0"}
                                  name="officeWorkDays"
                                 />
-                                <label htmlFor="zero">0</label>
-                            </div>
-                            <div className="input-group-item">
+                                <div className="radio-dot"></div>
+                                0
+                            </label>
+                            <label className="input-group-item radio" htmlFor="one">
                                 <input
                                  type="radio" 
                                  id="one"
@@ -135,9 +140,10 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  checked={officeWorkDays === "1"}
                                  name="officeWorkDays"
                                 />
-                                <label htmlFor="one">1</label>
-                            </div>
-                            <div className="input-group-item">
+                                <div className="radio-dot"></div>
+                                1
+                            </label>
+                            <label className="input-group-item radio" htmlFor="two">
                                 <input
                                  type="radio" 
                                  id="two" 
@@ -146,9 +152,10 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  checked={officeWorkDays === "2"}
                                  name="officeWorkDays"
                                 />
-                                <label htmlFor="two">2</label>
-                            </div>
-                            <div className="input-group-item">
+                                <div className="radio-dot"></div>
+                                2
+                            </label>
+                            <label className="input-group-item radio" htmlFor="three">
                                 <input
                                  type="radio" 
                                  id="three" 
@@ -157,9 +164,10 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  checked={officeWorkDays === "3"}
                                  name="officeWorkDays"
                                 />
-                                <label htmlFor="three">3</label>
-                            </div>
-                            <div className="input-group-item">
+                                <div className="radio-dot"></div>
+                                3
+                            </label>
+                            <label className="input-group-item radio" htmlFor="four">
                                 <input
                                  type="radio" 
                                  id="four" 
@@ -168,9 +176,10 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  checked={officeWorkDays === "4"}
                                  name="officeWorkDays"
                                 />
-                                <label htmlFor="four">4</label>
-                            </div>
-                            <div className="input-group-item">
+                                <div className="radio-dot"></div>
+                                4
+                            </label>
+                            <label className="input-group-item radio" htmlFor="five">
                                 <input
                                  type="radio" 
                                  id="five" 
@@ -179,8 +188,9 @@ const WorkInfo = ({setComponentToDisplay}) => {
                                  checked={officeWorkDays === "5"}
                                  name="officeWorkDays"
                                 />
-                                <label htmlFor="five">5</label>
-                            </div>
+                                <div className="radio-dot"></div>
+                                5
+                            </label>
                         </div>
                         <div className="input-group">
                             <h3>რას ფიქრობ ფიზიკურ შეკრებებზე?</h3>

@@ -238,3 +238,37 @@ body {
   left: 50%;
   top: 50%;
 }
+.radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+.radio > .radio-dot {
+  margin-right: 20px;
+}
+.radio > input {
+  display: none;
+}
+.radio-dot {
+  border-radius: 50%;
+  width: 23px;
+  height: 23px;
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radio-dot::after {
+  content: "";
+  width: 17px;
+  height: 17px;                      
+  background-color: var(--black);
+  border-radius: 50%;
+  display: none;  
+}
+input:checked + .radio-dot::after {
+  display: block;
+}

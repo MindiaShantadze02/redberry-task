@@ -155,7 +155,7 @@ const CovidInfo = () => {
                     <form id="covid-form">
                         <div className="input-group">
                             <h3 className="info-title required">გაქვს გადატანილი Covid-19?</h3>
-                            <div className="input-group-item">
+                            <label className="input-group-item radio" htmlFor="have-covid">
                                 <input
                                  type="radio"
                                  name="covid-info"
@@ -164,9 +164,10 @@ const CovidInfo = () => {
                                  value="კი"
                                  checked={hadCovid === "კი"}
                                  />
-                                <label htmlFor="have-covid">კი</label>
-                            </div>
-                            <div className="input-group-item">
+                                 <div className="radio-dot"></div>
+                                კი
+                            </label>
+                            <label className="input-group-item radio" htmlFor="doesnt-have-covid">
                                 <input
                                  type="radio" 
                                  name="covid-info" 
@@ -175,9 +176,10 @@ const CovidInfo = () => {
                                  value="არა"
                                  checked={hadCovid === "არა"}
                                  />
-                                <label htmlFor="doesnt-have-covid">არა</label>
-                            </div>
-                            <div className="input-group-item">
+                                 <div className="radio-dot"></div>
+                                არა
+                            </label>
+                            <label className="input-group-item radio" htmlFor="currently-have-covid">
                                 <input
                                  type="radio" 
                                  name="covid-info" 
@@ -186,14 +188,15 @@ const CovidInfo = () => {
                                  onChange={handleHadCovid}
                                  checked={hadCovid === "ახლა მაქვს"}
                                  />
-                                <label htmlFor="currently-have-covid">ახლა მაქვს</label>
-                            </div>
+                                 <div className="radio-dot"></div>
+                                ახლა მაქვს
+                            </label>
                         </div>
 
                     {hadCovid === "კი" && (
                         <div className="input-group">
                             <h3 className="info-title required">შემთხვევით ანტისხეულების ტესტი ხომ არ გაქვს გაკეთებული?</h3>
-                            <div className="input-group-item">
+                            <label className="input-group-item radio" htmlFor="antibody-test-true">
                                 <input
                                  type="radio"
                                  name="antibody-test-info"
@@ -202,9 +205,10 @@ const CovidInfo = () => {
                                  onChange={ev => handleDoneAntibodyTest(ev.target.value)}
                                  checked={doneAntibodyTest === "კი"}
                                  />
-                                <label htmlFor="antibody-test-true">კი</label>
-                            </div>
-                            <div className="input-group-item">
+                                 <div className="radio-dot"></div>
+                                კი
+                            </label>
+                            <label className="input-group-item radio radio" htmlFor="antibody-test-false">
                                 <input
                                  type="radio" 
                                  name="antibody-test-info" 
@@ -213,8 +217,9 @@ const CovidInfo = () => {
                                  onChange={ev => handleDoneAntibodyTest(ev.target.value)}
                                  checked={doneAntibodyTest === "არა"}
                                 />
-                            <label htmlFor="antibody-test-false">არა</label>
-                            </div>
+                                <div className="radio-dot"></div>
+                            არა
+                            </label>
                         </div>
                     )}
 
