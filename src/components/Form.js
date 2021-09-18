@@ -21,6 +21,7 @@ const Form = ({setComponentToDisplay}) => {
             return <VaccinationPage />
         case 4:
             return <RecommendationPage setComponentToDisplay={setComponentToDisplay} />
+        default:
     }
 }
  

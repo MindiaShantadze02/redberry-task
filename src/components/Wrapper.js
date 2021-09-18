@@ -14,11 +14,7 @@ import { AppContext } from "../context/AppState";
 
 const Wrapper = ({setComponentToDisplay}) => {
     // Using context
-    const { 
-        firstName ,
-        lastName ,
-        email ,
-        currentPage } = useContext(AppContext);
+    const { currentPage } = useContext(AppContext);
     
     // Changing Shape depending on current page
 

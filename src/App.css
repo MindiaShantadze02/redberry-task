@@ -18,7 +18,6 @@
 }
 .app-wrapper {
   margin: auto;
-  width: 1920px;
   height: 1080px
 }
 body {
@@ -26,50 +25,40 @@ body {
   margin: auto;
 }
 .start-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  width: 100%;
   height: 100vh;
-  margin-top: 262px;
 }
 .start-page-content {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+.start-main-vector {
+  width: 100%;
+  height: 100%;
 }
 .start-page-img {
-  position: absolute;
-  width: 455px;
-  height: 278px;
-  padding: 81px 177px 97px 178px;
-  margin-bottom: 97px;
-  z-index: 100;
+  padding: 81px 177px 97px 177px;
   background-color: var(--lightgray);
-}
-.start-page-img img {
-  box-sizing: border-box;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-}
-.start-button {
-  width: 498px;
-  height: 179px;
-  text-align: center;
-  font-size: var(--largeSize);
-  font-weight: var(--boldFont);
-  color: var(--black);
-  text-decoration: none;
+  z-index: 100;
 }
 .start-button a {
   color: var(--black);
   text-decoration: none;
   font-family: "BPG Banner Caps", sans-serif;
+  font-size: 30px;
   line-height: 36px;
+  font-weight: bold;
 }
 .start-page a:hover {
   text-shadow: 
-  1px 1px 0 white,
+  1px 1px 0 var(--lightgray),
   3px 1px 0 var(--black);
 }
 .navbar {
@@ -316,6 +305,7 @@ input:checked + .radio-dot::after {
   top: 324px;
   z-index: 100;
   background-color: #D6D16E;
+  animation: none;
   opacity: 0.7;
   transition: 0.5s;
 }
@@ -350,4 +340,13 @@ input:checked + .radio-dot::after {
   background-image: url(./imgs/heart.svg);
   opacity: 0.7;
   transition: 0.5s;
+}
+.hidden-div {
+  position: absolute;
+  width: 700px;
+  height: 300px;
+  background-color: var(--black);
+  top: 5%;
+  left: 30%;
+  z-index: 100;
 }
