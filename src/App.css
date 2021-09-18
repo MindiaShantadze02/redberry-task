@@ -16,18 +16,14 @@
   --boldFont: 700;
   --blue: #1289AE;
 }
-body {
-  background: var(--lightgray);;
+.app-wrapper {
+  margin: auto;
+  width: 1920px;
+  height: 1080px
 }
-@keyframes slideStartText {
-  from {
-    opacity: 0;
-    transform: translateY(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+body {
+  background: var(--lightgray);
+  margin: auto;
 }
 .start-page {
   display: flex;
@@ -41,17 +37,20 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.start-img-wrapper {
-  padding: 81px 177px 97px 178px;
-  z-index: 10;
-}
 .start-page-img {
-  background-image: url(./imgs/vector.png);
+  position: absolute;
+  width: 455px;
+  height: 278px;
+  padding: 81px 177px 97px 178px;
+  margin-bottom: 97px;
+  z-index: 100;
+  background-color: var(--lightgray);
+}
+.start-page-img img {
+  box-sizing: border-box;
+  border-radius: 50%;
   width: 100px;
   height: 100px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 50%;
 }
 .start-button {
   width: 498px;
@@ -61,7 +60,6 @@ body {
   font-weight: var(--boldFont);
   color: var(--black);
   text-decoration: none;
-  animation: slideStartText 1s ease forwards;
 }
 .start-button a {
   color: var(--black);
@@ -70,7 +68,9 @@ body {
   line-height: 36px;
 }
 .start-page a:hover {
-  text-shadow: 5px 2px 0 gray;
+  text-shadow: 
+  1px 1px 0 white,
+  3px 1px 0 var(--black);
 }
 .navbar {
   width: 1520px;
@@ -158,8 +158,8 @@ body {
 .arrows {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 104px;
+  padding-top: 30px;
+  padding-bottom: 104px;
 }
 .arrows > button {
   margin: 0 64px;
@@ -208,7 +208,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.recommendation-info p {
+.recommendation-page p {
   width: 606px;
   height: 251px;
   font-size: 1.375rem;
@@ -225,10 +225,14 @@ body {
 .vaccination-info .img-wrapper img {
   margin-top: 54px;
 }
-.recommendation-info .img-wrapper img {
+.recommendation-page-wrapper {
+  width: 622px;
+}
+.recommendation-page .img-wrapper img {
   width: 703px;
   height: 703px;
   margin-top: 71px;
+  margin-left: 150px;
 }
 #recommendation-form {
   display: flex;
@@ -249,7 +253,8 @@ body {
 }
 .thank-you-page h1 {
   font-size: 4rem;
-  letter-spacing: 0.24rem;
+  letter-spacing: 20px;
+  font-family: "BPG Banner Caps", sans-serif;
   color: #FFF;
 }
 .thank-you-page > div {
@@ -259,10 +264,12 @@ body {
   float: right;
   width: 33px;
   height: 33px;
+  margin-top: 20px;
   margin-right: 30px;
 }
 .star {
   margin-left: 30px;
+  margin-bottom: 20px;
 }
 .app-wrapper {
   position: relative;
@@ -316,8 +323,8 @@ input:checked + .radio-dot::after {
   position: absolute;
   width: 229px;
   height: 229px;
-  top: 341px;
-  left: 841px;
+  top: 349px;
+  right: 815px;;
   background-color: #DD3939;
   opacity: 0.7;
   z-index: 100;
@@ -330,14 +337,14 @@ input:checked + .radio-dot::after {
   width: 288px;
   height: 312px;
   top: 120px;
-  left: 971px;
+  right: 661px;
   opacity: 0.7;
   transition: 0.5s;
 }
 .heart {
   position: absolute;
-  top: 225px;
-  left: 1085px;
+  top: 221px;
+  right: 620px;
   height: 172px;
   width: 195px;
   background-image: url(./imgs/heart.svg);

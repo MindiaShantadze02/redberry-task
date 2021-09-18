@@ -1,5 +1,10 @@
 // Importing vector image
 import vector from "../imgs/vector.png";
+
+// Importing framer motion
+import { motion } from "framer-motion";
+
+
 const Start = ({setComponentToDisplay}) => {
     
     //Function for changing displayForm from false to true
@@ -10,16 +15,20 @@ const Start = ({setComponentToDisplay}) => {
     return ( 
         <div className="start-page">
             <div className="start-page-content">
-                <div className="start-img-wrapper">
-                    <div className="start-page-img"></div>
+                <div className="start-page-img">
+                    <img src={vector} alt="" />
                 </div>
-                <div className="start-button">
+                <motion.div className="start-button"
+                initial={{y:0, opacity: 0}}
+                animate={{y:300, opacity: 1}}
+                transition={{duration: 1.3}}
+                >
                     <a href="#" onClick={switchToWrapper}>
                         კითხვარის
                         <br />
                         დაწყება
                         </a>
-                </div>
+                </motion.div>
             </div>
         </div>
      );

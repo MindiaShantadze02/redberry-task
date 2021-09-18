@@ -42,10 +42,9 @@ const WorkInfo = ({setComponentToDisplay}) => {
         if (showThankYouPage) setComponentToDisplay("ThankYou");
     }
     return ( 
-        <div className="recommendation-info">
-            
+        <div className="recommendation-page">
             <div className="content-wrapper">
-                <section className="form-wrapper work-page-wrapper">
+                <section className="form-wrapper recommendation-page-wrapper">
                     <p style={{marginTop:"41px"}}>რედბერის მთავარი ღირებულება ჩვენი გუნდის თითოეული წევრია. გარემო, რომელსაც ჩვენი
                     თანამშრომლები ქმნით, ბევრისთვის არის და ყოფილა წლების განმავლობაში მიზნებისთვის ერთად ბრძოლის
                     მიზეზი, ბევრისთვის კი — ჩვენთან გადმოსვლის.

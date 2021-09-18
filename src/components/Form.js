@@ -9,7 +9,6 @@ import RecommendationPage from "../pages/RecommendationPage";
 
 // Importing app context
 import { AppContext } from "../context/AppState";
-import ThankYou from "./ThankYou";
 
 const Form = ({setComponentToDisplay}) => {
     const { currentPage } = useContext(AppContext);

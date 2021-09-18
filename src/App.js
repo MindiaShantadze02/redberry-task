@@ -11,8 +11,6 @@ import ComponentToDisplay from './components/ComponentToDisplay';
 import { AppState } from "./context/AppState";
 function App() {
 
-  // For changing from state to form component
-  const [displayWrapper, setDisplayWrapper] = useState(false);
   return (
     <AppState>
       <main className="app">
