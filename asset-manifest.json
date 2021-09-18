@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/redberry-task/static/css/main.68e49a19.chunk.css",
+    "main.js": "/redberry-task/static/js/main.c362bf47.chunk.js",
+    "main.js.map": "/redberry-task/static/js/main.c362bf47.chunk.js.map",
+    "runtime-main.js": "/redberry-task/static/js/runtime-main.44df787a.js",
+    "runtime-main.js.map": "/redberry-task/static/js/runtime-main.44df787a.js.map",
+    "static/js/2.c1c16fea.chunk.js": "/redberry-task/static/js/2.c1c16fea.chunk.js",
+    "static/js/2.c1c16fea.chunk.js.map": "/redberry-task/static/js/2.c1c16fea.chunk.js.map",
+    "index.html": "/redberry-task/index.html",
+    "static/css/main.68e49a19.chunk.css.map": "/redberry-task/static/css/main.68e49a19.chunk.css.map",
+    "static/js/2.c1c16fea.chunk.js.LICENSE.txt": "/redberry-task/static/js/2.c1c16fea.chunk.js.LICENSE.txt",
+    "static/media/bike.285d642f.png": "/redberry-task/static/media/bike.285d642f.png",
+    "static/media/doctor2.3e94e51e.png": "/redberry-task/static/media/doctor2.3e94e51e.png",
+    "static/media/App.css": "/redberry-task/static/media/star-shape.5399f300.svg",
+    "static/media/logo.8c96a154.svg": "/redberry-task/static/media/logo.8c96a154.svg",
+    "static/media/main-vector.5dc81c84.png": "/redberry-task/static/media/main-vector.5dc81c84.png",
+    "static/media/next-uncompleted-clicked.d042aa23.svg": "/redberry-task/static/media/next-uncompleted-clicked.d042aa23.svg",
+    "static/media/next-uncompleted.d042aa23.svg": "/redberry-task/static/media/next-uncompleted.d042aa23.svg",
+    "static/media/next.af59a94f.svg": "/redberry-task/static/media/next.af59a94f.svg",
+    "static/media/people.cbf4d383.png": "/redberry-task/static/media/people.cbf4d383.png",
+    "static/media/previous.34f45c01.svg": "/redberry-task/static/media/previous.34f45c01.svg",
+    "static/media/star.ce4abbb2.svg": "/redberry-task/static/media/star.ce4abbb2.svg",
+    "static/media/vaccinate2.7d58a8a5.png": "/redberry-task/static/media/vaccinate2.7d58a8a5.png",
+    "static/media/vector.e5f2a04a.svg": "/redberry-task/static/media/vector.e5f2a04a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.44df787a.js",
+    "static/js/2.c1c16fea.chunk.js",
+    "static/css/main.68e49a19.chunk.css",
+    "static/js/main.c362bf47.chunk.js"
+  ]
+}
